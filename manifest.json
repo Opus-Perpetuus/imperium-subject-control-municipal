@@ -1,0 +1,671 @@
+{
+  "id": "SUBJECT-control-municipal",
+  "technicalId": "subject-control-municipal",
+  "name": "Control municipal",
+  "version": "0.1.0",
+  "image": "ghcr.io/opus-perpetuus/subject-control-municipal:0.1.0",
+  "compat": {
+    "nox": ">=0.5.0",
+    "kit": "^0.5.0"
+  },
+  "api": {
+    "basePath": "/",
+    "port": 3000,
+    "healthPath": "/health"
+  },
+  "permissions": [
+    {
+      "id": "subject.control-municipal.agua.read",
+      "label": "Ver Parámetros"
+    },
+    {
+      "id": "subject.control-municipal.agua.write",
+      "label": "Editar Parámetros"
+    },
+    {
+      "id": "subject.control-municipal.agua-reportes.read",
+      "label": "Ver Reportes"
+    },
+    {
+      "id": "subject.control-municipal.agua-reportes.write",
+      "label": "Editar Reportes"
+    },
+    {
+      "id": "subject.control-municipal.agua-sync.read",
+      "label": "Ver Sincronización"
+    },
+    {
+      "id": "subject.control-municipal.agua-sync.write",
+      "label": "Editar Sincronización"
+    },
+    {
+      "id": "subject.control-municipal.lectura-campo.read",
+      "label": "Ver Captura de campo"
+    },
+    {
+      "id": "subject.control-municipal.lectura-campo.write",
+      "label": "Editar Captura de campo"
+    },
+    {
+      "id": "subject.control-municipal.lecturista.read",
+      "label": "Ver Lecturistas"
+    },
+    {
+      "id": "subject.control-municipal.lecturista.write",
+      "label": "Editar Lecturistas"
+    },
+    {
+      "id": "subject.control-municipal.impedimento.read",
+      "label": "Ver Impedimentos"
+    },
+    {
+      "id": "subject.control-municipal.impedimento.write",
+      "label": "Editar Impedimentos"
+    },
+    {
+      "id": "subject.control-municipal.periodo.read",
+      "label": "Ver Periodos"
+    },
+    {
+      "id": "subject.control-municipal.periodo.write",
+      "label": "Editar Periodos"
+    },
+    {
+      "id": "subject.control-municipal.incidencia.read",
+      "label": "Ver Incidencias"
+    },
+    {
+      "id": "subject.control-municipal.incidencia.write",
+      "label": "Editar Incidencias"
+    },
+    {
+      "id": "subject.control-municipal.lectura.read",
+      "label": "Ver Lecturas"
+    },
+    {
+      "id": "subject.control-municipal.lectura.write",
+      "label": "Editar Lecturas"
+    },
+    {
+      "id": "subject.control-municipal.tarifa.read",
+      "label": "Ver Tarifas"
+    },
+    {
+      "id": "subject.control-municipal.tarifa.write",
+      "label": "Editar Tarifas"
+    },
+    {
+      "id": "subject.control-municipal.contrato.read",
+      "label": "Ver Contratos"
+    },
+    {
+      "id": "subject.control-municipal.contrato.write",
+      "label": "Editar Contratos"
+    },
+    {
+      "id": "subject.control-municipal.ruta.read",
+      "label": "Ver Rutas"
+    },
+    {
+      "id": "subject.control-municipal.ruta.write",
+      "label": "Editar Rutas"
+    },
+    {
+      "id": "subject.control-municipal.cuadrillas.read",
+      "label": "Ver Cuadrillas"
+    },
+    {
+      "id": "subject.control-municipal.cuadrillas.write",
+      "label": "Editar Cuadrillas"
+    },
+    {
+      "id": "subject.control-municipal.citizen-report.read",
+      "label": "Ver Reportes"
+    },
+    {
+      "id": "subject.control-municipal.citizen-report.write",
+      "label": "Editar Reportes"
+    },
+    {
+      "id": "subject.control-municipal.citizen-report-reporting-medium.read",
+      "label": "Ver Medio de reporte"
+    },
+    {
+      "id": "subject.control-municipal.citizen-report-reporting-medium.write",
+      "label": "Editar Medio de reporte"
+    },
+    {
+      "id": "subject.control-municipal.citizen-report-problem.read",
+      "label": "Ver Tipo de problema"
+    },
+    {
+      "id": "subject.control-municipal.citizen-report-problem.write",
+      "label": "Editar Tipo de problema"
+    },
+    {
+      "id": "subject.control-municipal.municipality.read",
+      "label": "Ver Municipios"
+    },
+    {
+      "id": "subject.control-municipal.municipality.write",
+      "label": "Editar Municipios"
+    },
+    {
+      "id": "subject.control-municipal.boroughs.read",
+      "label": "Ver Delegaciones"
+    },
+    {
+      "id": "subject.control-municipal.boroughs.write",
+      "label": "Editar Delegaciones"
+    },
+    {
+      "id": "subject.control-municipal.states.read",
+      "label": "Ver Estados"
+    },
+    {
+      "id": "subject.control-municipal.states.write",
+      "label": "Editar Estados"
+    },
+    {
+      "id": "subject.control-municipal.violation.read",
+      "label": "Ver Infracciones"
+    },
+    {
+      "id": "subject.control-municipal.violation.write",
+      "label": "Editar Infracciones"
+    },
+    {
+      "id": "subject.control-municipal.violation-user-id-type.read",
+      "label": "Ver Identificaciones válidas"
+    },
+    {
+      "id": "subject.control-municipal.violation-user-id-type.write",
+      "label": "Editar Identificaciones válidas"
+    },
+    {
+      "id": "subject.control-municipal.violation-vehicle-brand.read",
+      "label": "Ver Marcas de vehículos"
+    },
+    {
+      "id": "subject.control-municipal.violation-vehicle-brand.write",
+      "label": "Editar Marcas de vehículos"
+    },
+    {
+      "id": "subject.control-municipal.violation-mobility-law.read",
+      "label": "Ver Reglamento de Movilidad"
+    },
+    {
+      "id": "subject.control-municipal.violation-mobility-law.write",
+      "label": "Editar Reglamento de Movilidad"
+    },
+    {
+      "id": "subject.control-municipal.violation-vehicle-type.read",
+      "label": "Ver Tipos de vehículo"
+    },
+    {
+      "id": "subject.control-municipal.violation-vehicle-type.write",
+      "label": "Editar Tipos de vehículo"
+    },
+    {
+      "id": "subject.control-municipal.violation-payment-method.read",
+      "label": "Ver Métodos de pago"
+    },
+    {
+      "id": "subject.control-municipal.violation-payment-method.write",
+      "label": "Editar Métodos de pago"
+    },
+    {
+      "id": "subject.control-municipal.violation-offender-guarantee.read",
+      "label": "Ver Garantías del infractor"
+    },
+    {
+      "id": "subject.control-municipal.violation-offender-guarantee.write",
+      "label": "Editar Garantías del infractor"
+    },
+    {
+      "id": "subject.control-municipal.violation-city-zone.read",
+      "label": "Ver Zonas de Ciudad"
+    },
+    {
+      "id": "subject.control-municipal.violation-city-zone.write",
+      "label": "Editar Zonas de Ciudad"
+    },
+    {
+      "id": "subject.control-municipal.cobranza.read",
+      "label": "Ver Cobranza"
+    },
+    {
+      "id": "subject.control-municipal.cobranza.write",
+      "label": "Editar Cobranza"
+    }
+  ],
+  "pages": [
+    {
+      "id": "control-municipal.agua",
+      "path": "agua",
+      "permission": "subject.control-municipal.agua.read"
+    },
+    {
+      "id": "control-municipal.agua-reportes",
+      "path": "agua-reportes",
+      "permission": "subject.control-municipal.agua-reportes.read"
+    },
+    {
+      "id": "control-municipal.agua-sync",
+      "path": "agua-sync",
+      "permission": "subject.control-municipal.agua-sync.read"
+    },
+    {
+      "id": "control-municipal.lectura-campo",
+      "path": "lectura-campo",
+      "permission": "subject.control-municipal.lectura-campo.read"
+    },
+    {
+      "id": "control-municipal.lecturista",
+      "path": "lecturista",
+      "permission": "subject.control-municipal.lecturista.read"
+    },
+    {
+      "id": "control-municipal.impedimento",
+      "path": "impedimento",
+      "permission": "subject.control-municipal.impedimento.read"
+    },
+    {
+      "id": "control-municipal.periodo",
+      "path": "periodo",
+      "permission": "subject.control-municipal.periodo.read"
+    },
+    {
+      "id": "control-municipal.incidencia",
+      "path": "incidencia",
+      "permission": "subject.control-municipal.incidencia.read"
+    },
+    {
+      "id": "control-municipal.lectura",
+      "path": "lectura",
+      "permission": "subject.control-municipal.lectura.read"
+    },
+    {
+      "id": "control-municipal.tarifa",
+      "path": "tarifa",
+      "permission": "subject.control-municipal.tarifa.read"
+    },
+    {
+      "id": "control-municipal.contrato",
+      "path": "contrato",
+      "permission": "subject.control-municipal.contrato.read"
+    },
+    {
+      "id": "control-municipal.ruta",
+      "path": "ruta",
+      "permission": "subject.control-municipal.ruta.read"
+    },
+    {
+      "id": "control-municipal.cuadrillas",
+      "path": "cuadrillas",
+      "permission": "subject.control-municipal.cuadrillas.read"
+    },
+    {
+      "id": "control-municipal.citizen-report",
+      "path": "citizen-report",
+      "permission": "subject.control-municipal.citizen-report.read"
+    },
+    {
+      "id": "control-municipal.citizen-report-reporting-medium",
+      "path": "citizen-report-reporting-medium",
+      "permission": "subject.control-municipal.citizen-report-reporting-medium.read"
+    },
+    {
+      "id": "control-municipal.citizen-report-problem",
+      "path": "citizen-report-problem",
+      "permission": "subject.control-municipal.citizen-report-problem.read"
+    },
+    {
+      "id": "control-municipal.municipality",
+      "path": "municipality",
+      "permission": "subject.control-municipal.municipality.read"
+    },
+    {
+      "id": "control-municipal.boroughs",
+      "path": "boroughs",
+      "permission": "subject.control-municipal.boroughs.read"
+    },
+    {
+      "id": "control-municipal.states",
+      "path": "states",
+      "permission": "subject.control-municipal.states.read"
+    },
+    {
+      "id": "control-municipal.violation",
+      "path": "violation",
+      "permission": "subject.control-municipal.violation.read"
+    },
+    {
+      "id": "control-municipal.violation-user-id-type",
+      "path": "violation-user-id-type",
+      "permission": "subject.control-municipal.violation-user-id-type.read"
+    },
+    {
+      "id": "control-municipal.violation-vehicle-brand",
+      "path": "violation-vehicle-brand",
+      "permission": "subject.control-municipal.violation-vehicle-brand.read"
+    },
+    {
+      "id": "control-municipal.violation-mobility-law",
+      "path": "violation-mobility-law",
+      "permission": "subject.control-municipal.violation-mobility-law.read"
+    },
+    {
+      "id": "control-municipal.violation-vehicle-type",
+      "path": "violation-vehicle-type",
+      "permission": "subject.control-municipal.violation-vehicle-type.read"
+    },
+    {
+      "id": "control-municipal.violation-payment-method",
+      "path": "violation-payment-method",
+      "permission": "subject.control-municipal.violation-payment-method.read"
+    },
+    {
+      "id": "control-municipal.violation-offender-guarantee",
+      "path": "violation-offender-guarantee",
+      "permission": "subject.control-municipal.violation-offender-guarantee.read"
+    },
+    {
+      "id": "control-municipal.violation-city-zone",
+      "path": "violation-city-zone",
+      "permission": "subject.control-municipal.violation-city-zone.read"
+    },
+    {
+      "id": "control-municipal.cobranza",
+      "path": "cobranza",
+      "permission": "subject.control-municipal.cobranza.read"
+    }
+  ],
+  "menu": [
+    {
+      "id": "control-municipal.root",
+      "label": "Control municipal",
+      "order": 0,
+      "children": [
+        {
+          "id": "control-municipal.folder.citizen-report-menu-root",
+          "label": "Reporte ciudadano",
+          "order": 0,
+          "children": [
+            {
+              "id": "control-municipal.citizen-report",
+              "label": "Reportes",
+              "order": 0,
+              "pageId": "control-municipal.citizen-report",
+              "path": "citizen-report",
+              "permission": "subject.control-municipal.citizen-report.read"
+            },
+            {
+              "id": "control-municipal.citizen-report-reporting-medium",
+              "label": "Medio de reporte",
+              "order": 0,
+              "pageId": "control-municipal.citizen-report-reporting-medium",
+              "path": "citizen-report-reporting-medium",
+              "permission": "subject.control-municipal.citizen-report-reporting-medium.read"
+            },
+            {
+              "id": "control-municipal.citizen-report-problem",
+              "label": "Tipo de problema",
+              "order": 0,
+              "pageId": "control-municipal.citizen-report-problem",
+              "path": "citizen-report-problem",
+              "permission": "subject.control-municipal.citizen-report-problem.read"
+            },
+            {
+              "id": "control-municipal.cuadrillas",
+              "label": "Cuadrillas",
+              "order": 20,
+              "pageId": "control-municipal.cuadrillas",
+              "path": "cuadrillas",
+              "permission": "subject.control-municipal.cuadrillas.read"
+            }
+          ]
+        },
+        {
+          "id": "control-municipal.folder.violation-menu-management-root",
+          "label": "Infracciones",
+          "order": 0,
+          "children": [
+            {
+              "id": "control-municipal.municipality",
+              "label": "Municipios",
+              "order": 0,
+              "pageId": "control-municipal.municipality",
+              "path": "municipality",
+              "permission": "subject.control-municipal.municipality.read"
+            },
+            {
+              "id": "control-municipal.boroughs",
+              "label": "Delegaciones",
+              "order": 0,
+              "pageId": "control-municipal.boroughs",
+              "path": "boroughs",
+              "permission": "subject.control-municipal.boroughs.read"
+            },
+            {
+              "id": "control-municipal.states",
+              "label": "Estados",
+              "order": 0,
+              "pageId": "control-municipal.states",
+              "path": "states",
+              "permission": "subject.control-municipal.states.read"
+            },
+            {
+              "id": "control-municipal.violation",
+              "label": "Infracciones",
+              "order": 0,
+              "pageId": "control-municipal.violation",
+              "path": "violation",
+              "permission": "subject.control-municipal.violation.read"
+            },
+            {
+              "id": "control-municipal.violation-user-id-type",
+              "label": "Identificaciones válidas",
+              "order": 0,
+              "pageId": "control-municipal.violation-user-id-type",
+              "path": "violation-user-id-type",
+              "permission": "subject.control-municipal.violation-user-id-type.read"
+            },
+            {
+              "id": "control-municipal.violation-vehicle-brand",
+              "label": "Marcas de vehículos",
+              "order": 0,
+              "pageId": "control-municipal.violation-vehicle-brand",
+              "path": "violation-vehicle-brand",
+              "permission": "subject.control-municipal.violation-vehicle-brand.read"
+            },
+            {
+              "id": "control-municipal.violation-mobility-law",
+              "label": "Reglamento de Movilidad",
+              "order": 0,
+              "pageId": "control-municipal.violation-mobility-law",
+              "path": "violation-mobility-law",
+              "permission": "subject.control-municipal.violation-mobility-law.read"
+            },
+            {
+              "id": "control-municipal.violation-vehicle-type",
+              "label": "Tipos de vehículo",
+              "order": 0,
+              "pageId": "control-municipal.violation-vehicle-type",
+              "path": "violation-vehicle-type",
+              "permission": "subject.control-municipal.violation-vehicle-type.read"
+            },
+            {
+              "id": "control-municipal.violation-payment-method",
+              "label": "Métodos de pago",
+              "order": 0,
+              "pageId": "control-municipal.violation-payment-method",
+              "path": "violation-payment-method",
+              "permission": "subject.control-municipal.violation-payment-method.read"
+            },
+            {
+              "id": "control-municipal.violation-offender-guarantee",
+              "label": "Garantías del infractor",
+              "order": 0,
+              "pageId": "control-municipal.violation-offender-guarantee",
+              "path": "violation-offender-guarantee",
+              "permission": "subject.control-municipal.violation-offender-guarantee.read"
+            },
+            {
+              "id": "control-municipal.violation-city-zone",
+              "label": "Zonas de Ciudad",
+              "order": 0,
+              "pageId": "control-municipal.violation-city-zone",
+              "path": "violation-city-zone",
+              "permission": "subject.control-municipal.violation-city-zone.read"
+            }
+          ]
+        },
+        {
+          "id": "control-municipal.folder.agua-menu-root",
+          "label": "Agua potable",
+          "order": 1,
+          "children": [
+            {
+              "id": "control-municipal.ruta",
+              "label": "Rutas",
+              "order": 1,
+              "pageId": "control-municipal.ruta",
+              "path": "ruta",
+              "permission": "subject.control-municipal.ruta.read"
+            },
+            {
+              "id": "control-municipal.contrato",
+              "label": "Contratos",
+              "order": 2,
+              "pageId": "control-municipal.contrato",
+              "path": "contrato",
+              "permission": "subject.control-municipal.contrato.read"
+            },
+            {
+              "id": "control-municipal.lecturista",
+              "label": "Lecturistas",
+              "order": 3,
+              "pageId": "control-municipal.lecturista",
+              "path": "lecturista",
+              "permission": "subject.control-municipal.lecturista.read"
+            },
+            {
+              "id": "control-municipal.tarifa",
+              "label": "Tarifas",
+              "order": 4,
+              "pageId": "control-municipal.tarifa",
+              "path": "tarifa",
+              "permission": "subject.control-municipal.tarifa.read"
+            },
+            {
+              "id": "control-municipal.impedimento",
+              "label": "Impedimentos",
+              "order": 5,
+              "pageId": "control-municipal.impedimento",
+              "path": "impedimento",
+              "permission": "subject.control-municipal.impedimento.read"
+            },
+            {
+              "id": "control-municipal.incidencia",
+              "label": "Incidencias",
+              "order": 6,
+              "pageId": "control-municipal.incidencia",
+              "path": "incidencia",
+              "permission": "subject.control-municipal.incidencia.read"
+            },
+            {
+              "id": "control-municipal.lectura-campo",
+              "label": "Captura de campo",
+              "order": 7,
+              "pageId": "control-municipal.lectura-campo",
+              "path": "lectura-campo",
+              "permission": "subject.control-municipal.lectura-campo.read"
+            },
+            {
+              "id": "control-municipal.periodo",
+              "label": "Periodos",
+              "order": 7,
+              "pageId": "control-municipal.periodo",
+              "path": "periodo",
+              "permission": "subject.control-municipal.periodo.read"
+            },
+            {
+              "id": "control-municipal.lectura",
+              "label": "Lecturas",
+              "order": 8,
+              "pageId": "control-municipal.lectura",
+              "path": "lectura",
+              "permission": "subject.control-municipal.lectura.read"
+            },
+            {
+              "id": "control-municipal.agua-reportes",
+              "label": "Reportes",
+              "order": 9,
+              "pageId": "control-municipal.agua-reportes",
+              "path": "agua-reportes",
+              "permission": "subject.control-municipal.agua-reportes.read"
+            },
+            {
+              "id": "control-municipal.agua-sync",
+              "label": "Sincronización",
+              "order": 10,
+              "pageId": "control-municipal.agua-sync",
+              "path": "agua-sync",
+              "permission": "subject.control-municipal.agua-sync.read"
+            },
+            {
+              "id": "control-municipal.agua",
+              "label": "Parámetros",
+              "order": 99,
+              "pageId": "control-municipal.agua",
+              "path": "agua",
+              "permission": "subject.control-municipal.agua.read"
+            }
+          ]
+        },
+        {
+          "id": "control-municipal.cobranza",
+          "label": "Cobranza",
+          "order": 1,
+          "pageId": "control-municipal.cobranza",
+          "path": "cobranza",
+          "permission": "subject.control-municipal.cobranza.read"
+        }
+      ]
+    }
+  ],
+  "storage": {
+    "domain": "shared-nox-postgres"
+  },
+  "resources": {
+    "agua": "agua",
+    "agua-reportes": "agua_reportes",
+    "agua-sync": "agua_sync",
+    "lectura-campo": "lectura_campo",
+    "lecturista": "lecturista",
+    "impedimento": "impedimento",
+    "periodo": "periodo",
+    "incidencia": "incidencia",
+    "lectura": "lectura",
+    "tarifa": "tarifa",
+    "contrato": "contrato",
+    "ruta": "ruta",
+    "cuadrillas": "cuadrillas",
+    "citizen-report": "citizen_report",
+    "citizen-report-reporting-medium": "citizen_report_reporting_medium",
+    "citizen-report-problem": "citizen_report_problem",
+    "municipality": "municipality",
+    "boroughs": "boroughs",
+    "states": "states",
+    "violation": "violation",
+    "violation-user-id-type": "violation_user_id_type",
+    "violation-vehicle-brand": "violation_vehicle_brand",
+    "violation-mobility-law": "violation_mobility_law",
+    "violation-vehicle-type": "violation_vehicle_type",
+    "violation-payment-method": "violation_payment_method",
+    "violation-offender-guarantee": "violation_offender_guarantee",
+    "violation-city-zone": "violation_city_zone",
+    "cobranza": "cobranza"
+  }
+}

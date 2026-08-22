@@ -1,0 +1,92 @@
+import {
+  build_feature_shell_page,
+  type KirletPageDecl,
+} from "@opus-perpetuus/imperium-core-kit";
+
+const API = "api://m/subject-control-municipal";
+
+export const citizen_report_pages: KirletPageDecl[] = [
+  {
+    id: "control-municipal.citizen-report",
+    path: "citizen-report",
+    permission: "subject.control-municipal.citizen-report.read",
+    build: () =>
+      build_feature_shell_page({
+        id: "control-municipal.citizen-report",
+        owner: "subject-control-municipal",
+        title: "Reportes",
+        props: {
+          basePath: "citizen-report",
+          idKey: "id",
+          nameKey: "name",
+          view: {
+            title: "Reportes",
+            subtitle: "Submenú de control-municipal",
+            pluralLabel: "reportes",
+            singularLabel: "reportes",
+            emptyTitle: "Sin registros",
+            emptyDescription: "Migra desde Mongo o crea el primero",
+          },
+          data: {
+            list: `${API}/citizen-report`,
+            record: `${API}/citizen-report/:id`,
+            create: { method: "POST", action: `${API}/citizen-report` },
+            update: { method: "PATCH", action: `${API}/citizen-report/:id` },
+            delete: { method: "DELETE", action: `${API}/citizen-report/:id` },
+          },
+          table: {
+            columns: [
+              { key: "name", label: "Nombre", sortable: true, priority: 1 },
+              { key: "is_active", label: "Activo", sortable: true, priority: 2 },
+              { key: "ref", label: "Ref", sortable: true, priority: 3 },
+              { key: "citizen_name", label: "citizen name", sortable: true, priority: 3 },
+              { key: "citizen_email", label: "citizen email", sortable: true, priority: 3 },
+              { key: "citizen_phone", label: "citizen phone", sortable: true, priority: 3 },
+              { key: "citizen_street", label: "citizen street", sortable: true, priority: 3 },
+              { key: "building_number_external", label: "building number external", sortable: true, priority: 3 },
+              { key: "building_number_internal", label: "building number internal", sortable: true, priority: 3 },
+            ],
+            fillHeight: true,
+            serverQuery: true,
+          },
+          form: {
+            fields: [
+              { name: "name", component: "input-text", label: "Nombre", required: true },
+              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "ref", component: "input-text", label: "Referencia (_ref)" },
+              { name: "citizen_name", component: "input-text", label: "citizen name" },
+              { name: "citizen_email", component: "input-text", label: "citizen email" },
+              { name: "citizen_phone", component: "input-text", label: "citizen phone" },
+              { name: "citizen_street", component: "input-text", label: "citizen street" },
+              { name: "building_number_external", component: "input-text", label: "building number external" },
+              { name: "building_number_internal", component: "input-text", label: "building number internal" },
+              { name: "neighborhood", component: "input-text", label: "neighborhood" },
+              { name: "borough", component: "input-text", label: "borough" },
+              { name: "delegado", component: "input-text", label: "delegado" },
+              { name: "report_description", component: "input-text", label: "report description" },
+              { name: "materials_used", component: "input-text", label: "materials used" },
+              { name: "employee_taken_the_report", component: "input-text", label: "employee taken the report" },
+              { name: "assinged_to", component: "input-text", label: "assinged to" },
+              { name: "department", component: "input-text", label: "department" },
+              { name: "cuadrilla", component: "input-text", label: "cuadrilla" },
+              { name: "jefe_de_cuadrilla", component: "input-text", label: "jefe de cuadrilla" },
+              { name: "priority", component: "input-text", label: "priority" },
+              { name: "status", component: "input-text", label: "status" },
+              { name: "citizen_report_problem", component: "input-text", label: "citizen report problem" },
+              { name: "reporting_medium", component: "input-text", label: "reporting medium" },
+              { name: "evidence_before_images", component: "input-text", label: "evidence before images" },
+              { name: "evidence_after_images", component: "input-text", label: "evidence after images" },
+              { name: "report_coordinates", component: "input-text", label: "report coordinates" },
+              { name: "latitude", component: "input-number", label: "latitude" },
+              { name: "longitude", component: "input-number", label: "longitude" },
+              { name: "sequence", component: "input-number", label: "sequence" },
+              { name: "parent_report_id", component: "input-text", label: "parent report id" },
+              { name: "source_instance_label", component: "input-text", label: "source instance label" },
+              { name: "source_instance_url", component: "input-text", label: "source instance url" },
+              { name: "public_submission", component: "input-checkbox", label: "public submission" },
+            ],
+          },
+        },
+      }),
+  },
+];
