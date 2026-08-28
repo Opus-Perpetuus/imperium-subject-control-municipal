@@ -12,7 +12,7 @@ export async function seed_demo(ctx: {
   await ctx.data.insert("agua", {
     id: new_id("agua"),
     name: "Parámetros (ejemplo)",
-    description: "Registro semilla del súbdito. Sustituye al migrar desde Mongo.",
+    description: "Registro semilla de la app. Sustituye al migrar desde Mongo.",
     is_active: true,
     ref: "seed-control-municipal",
     created_at: ts,
