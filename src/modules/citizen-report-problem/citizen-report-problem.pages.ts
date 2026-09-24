@@ -48,10 +48,21 @@ export const citizen_report_problem_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
-              { name: "auto_priority", component: "input-text", label: "auto priority" },
-              { name: "department", component: "input-text", label: "department" },
+              {
+                name: "auto_priority",
+                component: "input-menu",
+                label: "auto priority",
+                options: [
+                  { value: "BAJA", label: "Baja" },
+                  { value: "MEDIA", label: "Media" },
+                  { value: "ALTA", label: "Alta" },
+                  { value: "URGENTE", label: "Urgente" },
+                  { value: "CRITICA", label: "Crítica" },
+                ],
+              },
+              { name: "department", component: "input-datalist", label: "department", optionsSource: "api://m/subject-rh/departments?as=options&limite=1000" },
             ],
           },
         },

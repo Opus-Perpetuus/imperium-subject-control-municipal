@@ -48,7 +48,7 @@ export const periodo_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
               { name: "meses_por_periodo", component: "input-number", label: "meses por periodo" },
               { name: "id_periodo", component: "input-text", label: "id periodo" },

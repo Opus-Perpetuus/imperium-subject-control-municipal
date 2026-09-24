@@ -50,9 +50,17 @@ export const violation_mobility_law_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
-              { name: "security_measure", component: "input-text", label: "security measure" },
+              {
+                name: "security_measure",
+                component: "input-switch",
+                label: "security measure",
+                options: [
+                  { value: "true", label: "Sí" },
+                  { value: "false", label: "No" },
+                ],
+              },
               { name: "fractions", component: "input-text", label: "fractions" },
               { name: "umas_min", component: "input-number", label: "umas min" },
               { name: "umas_max", component: "input-number", label: "umas max" },

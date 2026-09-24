@@ -48,7 +48,7 @@ export const agua_sync_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
               { name: "vigencia_actual", component: "input-number", label: "vigencia actual" },
               { name: "periodo_actual", component: "input-number", label: "periodo actual" },

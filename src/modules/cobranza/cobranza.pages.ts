@@ -52,13 +52,13 @@ export const cobranza_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
               { name: "reference", component: "input-text", label: "reference" },
               { name: "concept", component: "input-text", label: "concept" },
-              { name: "total_amount", component: "input-number", label: "total amount" },
-              { name: "paid_amount", component: "input-number", label: "paid amount" },
-              { name: "balance", component: "input-number", label: "balance" },
+              { name: "total_amount", component: "input-money", label: "total amount" },
+              { name: "paid_amount", component: "input-money", label: "paid amount" },
+              { name: "balance", component: "input-money", label: "balance" },
               { name: "status", component: "input-text", label: "status" },
               { name: "source_module", component: "input-text", label: "source module" },
               { name: "source_id", component: "input-text", label: "source id" },

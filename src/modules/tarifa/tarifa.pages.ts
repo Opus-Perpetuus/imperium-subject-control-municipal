@@ -52,14 +52,14 @@ export const tarifa_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
               { name: "id_tarifa", component: "input-text", label: "id tarifa" },
               { name: "vigencia", component: "input-number", label: "vigencia" },
-              { name: "cuota_minima", component: "input-number", label: "cuota minima" },
+              { name: "cuota_minima", component: "input-money", label: "cuota minima" },
               { name: "consumo_minimo", component: "input-number", label: "consumo minimo" },
               { name: "consumo_maximo", component: "input-number", label: "consumo maximo" },
-              { name: "costo_mt3_excedente", component: "input-number", label: "costo mt3 excedente" },
+              { name: "costo_mt3_excedente", component: "input-money", label: "costo mt3 excedente" },
             ],
           },
         },

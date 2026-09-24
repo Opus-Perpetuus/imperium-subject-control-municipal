@@ -52,15 +52,15 @@ export const states_pages: KirletPageDecl[] = [
           form: {
             fields: [
               { name: "name", component: "input-text", label: "Nombre", required: true },
-              { name: "description", component: "input-text", label: "Descripción" },
+              { name: "description", component: "input-textarea", label: "Descripción" },
               { name: "ref", component: "input-text", label: "Referencia (_ref)" },
               { name: "catalog_key", component: "input-text", label: "catalog key" },
               { name: "abbreviation", component: "input-text", label: "abbreviation" },
               { name: "country", component: "input-text", label: "country" },
               { name: "cfdi_c_estado", component: "input-text", label: "cfdi c estado" },
               { name: "cfdi_c_pais", component: "input-text", label: "cfdi c pais" },
-              { name: "cfdi_fecha_inicio_vigencia", component: "input-text", label: "cfdi fecha inicio vigencia" },
-              { name: "cfdi_fecha_fin_vigencia", component: "input-text", label: "cfdi fecha fin vigencia" },
+              { name: "cfdi_fecha_inicio_vigencia", component: "input-date", label: "cfdi fecha inicio vigencia" },
+              { name: "cfdi_fecha_fin_vigencia", component: "input-date", label: "cfdi fecha fin vigencia" },
             ],
           },
         },
