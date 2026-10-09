@@ -39,6 +39,7 @@ export const contrato_tables: KirletTableDecl[] = [
       { name: "sincronizado_simapa", type: "boolean" },
       { name: "latitud", type: "real" },
       { name: "longitud", type: "real" },
+      { name: "periodo_id", type: "text" },
     ],
     indexes: [
       { name: "idx_contrato_name", columns: ["name"] },

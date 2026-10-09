@@ -51,6 +51,7 @@ export const contrato_module = define_module({
       sincronizado_simapa: { type: "boolean" },
       latitud: { type: "number" },
       longitud: { type: "number" },
+      periodo_id: { type: "string", search: true },
     },
     options_map: { value: "id", label: "name" },
   }),
