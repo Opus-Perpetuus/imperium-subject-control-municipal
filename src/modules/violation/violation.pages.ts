@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-control-municipal";
 
@@ -75,13 +76,13 @@ export const violation_pages: KirletPageDecl[] = [
               { name: "color", component: "input-text", label: "color" },
               {
                 name: "service_type",
-                component: "input-radio-buttons",
+                component: "input-menu",
                 label: "service type",
-                options: [
-                  { value: "Particular", label: "Particular" },
-                  { value: "Publico", label: "Público" },
-                  { value: "Publico Federal", label: "Público federal" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-control-municipal/violation",
+                  "service_type",
+                ),
               },
               { name: "administrative_arrest_commutable", component: "input-text", label: "administrative arrest commutable" },
               { name: "partial_breathalyzer_report", component: "input-text", label: "partial breathalyzer report" },

@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-control-municipal";
 
@@ -54,13 +55,11 @@ export const citizen_report_problem_pages: KirletPageDecl[] = [
                 name: "auto_priority",
                 component: "input-menu",
                 label: "auto priority",
-                options: [
-                  { value: "BAJA", label: "Baja" },
-                  { value: "MEDIA", label: "Media" },
-                  { value: "ALTA", label: "Alta" },
-                  { value: "URGENTE", label: "Urgente" },
-                  { value: "CRITICA", label: "Crítica" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-control-municipal/citizen-report-problem",
+                  "auto_priority",
+                ),
               },
               { name: "department", component: "input-datalist", label: "department", optionsSource: "api://m/subject-rh/departments?as=options&limite=1000" },
             ],

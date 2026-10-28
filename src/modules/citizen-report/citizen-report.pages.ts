@@ -2,6 +2,7 @@ import {
   build_feature_shell_page,
   type KirletPageDecl,
 } from "@opus-perpetuus/imperium-core-kit";
+import { general_option_list_options_source } from "../../general-option-seeds.ts";
 
 const API = "api://m/subject-control-municipal";
 
@@ -74,15 +75,18 @@ export const citizen_report_pages: KirletPageDecl[] = [
                 name: "priority",
                 component: "input-menu",
                 label: "priority",
-                options: [
-                  { value: "BAJA", label: "BAJA" },
-                  { value: "MEDIA", label: "MEDIA" },
-                  { value: "ALTA", label: "ALTA" },
-                  { value: "URGENTE", label: "URGENTE" },
-                  { value: "CRITICA", label: "CRITICA" },
-                ],
+                // Opciones: general-option-list-control (seed en general-option-seeds.ts).
+                optionsSource: general_option_list_options_source(
+                  "subject-control-municipal/citizen-report",
+                  "priority",
+                ),
               },
-              { name: "status", component: "input-text", label: "status" },
+              {
+                name: "status",
+                component: "input-status",
+                label: "status",
+                // Opciones: status-option-control (seed en status-seeds.ts).
+              },
               { name: "citizen_report_problem", component: "input-datalist", label: "citizen report problem", optionsSource: "api://m/subject-control-municipal/citizen-report-problem?as=options&limite=1000" },
               { name: "reporting_medium", component: "input-datalist", label: "reporting medium", optionsSource: "api://m/subject-control-municipal/citizen-report-reporting-medium?as=options&limite=1000" },
               { name: "evidence_before_images", component: "input-text", label: "evidence before images" },
