@@ -35,7 +35,8 @@ export const SUBJECT = define_subject({
   name: "Control municipal",
   version: pkg.version,
   image: `ghcr.io/opus-perpetuus/subject-control-municipal:${pkg.version}`,
-  compat: { nox: ">=0.5.0", kit: "^0.5.0" },
+  compat: { nox: ">=13.83.0", kit: "^13.0.0" },
+  requires: { core: "13.83.0", front: "13.83.0" },
   schema_version: 1,
   menu_root: {
     id: "control-municipal.root",
